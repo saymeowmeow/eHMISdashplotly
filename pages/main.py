@@ -16,29 +16,14 @@ import visdcc
 import plotly.express as px
 import folium
 
-
-
-
-# def get_connection():
-#     try:
-#         return psycopg2.connect(
-#             database="odisha_uat",
-#             user="odisha_uat",
-#             password="Od15hauat",
-#             host="10.10.10.54",
-#             port=5447)
-
-#     except:
-#         return False
-
 def get_connection():
     try:
         return psycopg2.connect(
-            database="odisha_uat_local",
-            user="enterprisedb",
-            password="enterprisedb",
-            host="10.226.17.97",
-            port=5444)
+            database="",
+            user="",
+            password="",
+            host="",
+            port=)
 
     except:
         return False
@@ -52,10 +37,6 @@ else:
 
   
 curr = conn.cursor()
-
-# curr.execute("SELECT * FROM "ahiscl"."gblt_hospital_mst"")
-
-# data = curr.fetchall()
 
 df_mydropdown= pd.read_sql_query(
         '''                                          
@@ -80,7 +61,7 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, dbc.icons.
     ]
 )
 
-test_png = 'C:/Users/HP/Desktop/CDAC/eswasthya_dashboard/logo4.png'
+test_png = '../../logo4.png'
 test_base64 = base64.b64encode(open(test_png, 'rb').read()).decode('ascii')
 
 
@@ -96,7 +77,7 @@ layout=html.Div([
                             dbc.Col([
                                
                                 html.P(className="fa fa-envelope mt-2",style={"color":"white"}),
-                                html.P(["dhsodisha@gmail.com"],className='m-1',style={"color":"white"})],className='col-sm-6 d-flex flex-row'),
+                                html.P(["xxxxxx@gmail.com"],className='m-1',style={"color":"white"})],className='col-sm-6 d-flex flex-row'),
                                 
                             dbc.Col([
                                 
