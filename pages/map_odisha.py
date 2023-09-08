@@ -25,10 +25,10 @@ def get_connection():
     try:
         return psycopg2.connect(
             database="odisha_uat_local",
-            user="enterprisedb",
-            password="enterprisedb",
-            host="10.226.17.97",
-            port=5444)
+            user="",
+            password="",
+            host="",
+            port=)
 
     except:
         return False
@@ -103,7 +103,7 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, dbc.icons.
 
 
 
-test_png = 'C:/Users/HP/Desktop/CDAC/eswasthya_dashboard/logo4.png'
+test_png = '../../logo4.png'
 test_base64 = base64.b64encode(open(test_png, 'rb').read()).decode('ascii')
 
 # tabs_styles = {
