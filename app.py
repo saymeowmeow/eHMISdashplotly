@@ -27,11 +27,11 @@ from folium.plugins import MarkerCluster
 def get_connection():
     try:
         return psycopg2.connect(        #for connection with postgresql
-            database="odisha_uat_local",
-            user="enterprisedb",
-            password="enterprisedb",
-            host="10.226.17.97",
-            port=5444)
+            database="",
+            user="",
+            password="",
+            host="",
+            port=)
 
     except:
         return False
@@ -48,13 +48,9 @@ curr = conn.cursor()
 app = dash.Dash(__name__, suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP, dbc.icons.FONT_AWESOME],
     meta_tags=[
         {"name": "viewport", "content": "width=device-width, initial-scale=1"}]
-    # ], external_scripts=[
-    #     'https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js',
-    #     {'src': 'C:/Users/HP/Desktop/CDAC/eswasthya_dashboard/custom-script.js'}
-    # ]
 )
 
-test_png = 'C:/Users/HP/Desktop/CDAC/eswasthya_dashboard/logo4.png'
+test_png = '../.../logo4.png'
 test_base64 = base64.b64encode(open(test_png, 'rb').read()).decode('ascii')
 
 app.title="Eswasthya dashboard"
@@ -76,36 +72,7 @@ def display_page(pathname):
     elif pathname == '/total':
         return total_count.layout
     else:
-        return '404'
-
-# checklistmap1=pd.read_sql_query(f'''SELECT
-#         COUNT
-#         ("ahiscl"."hrgt_episode_dtl"."hrgnum_puk") as count ,
-#         "ahiscl"."gblt_hospital_mst_copy1"."latitude" AS latitude,
-#         "ahiscl"."gblt_hospital_mst_copy1"."longitude" AS longitude,
-#         "ahiscl"."gblt_hospital_mst_copy1"."gnum_hospital_code",
-#         "ahiscl"."gblt_hospital_mst_copy1"."gstr_hospital_name",
-#         "ahiscl"."gblt_hospital_mst_copy1"."gnum_hospital_type"
-#         FROM
-#         "ahiscl"."hrgt_episode_dtl",
-#         "ahiscl"."gblt_hospital_mst_copy1" 
-#         WHERE
-#         "ahiscl"."gblt_hospital_mst_copy1"."gnum_hospital_code" = "ahiscl"."hrgt_episode_dtl"."gnum_hospital_code" AND 
-#         "ahiscl"."gblt_hospital_mst_copy1"."gnum_isvalid" = 1 
-#         AND "ahiscl"."gblt_hospital_mst_copy1"."gnum_state_code" = 21 
-#         AND "ahiscl"."gblt_hospital_mst_copy1"."gnum_hospital_type" =1
-#         GROUP BY
-#         "ahiscl"."gblt_hospital_mst_copy1"."latitude",
-#         "ahiscl"."gblt_hospital_mst_copy1"."longitude",
-#         "ahiscl"."gblt_hospital_mst_copy1"."gnum_hospital_code",
-#         "ahiscl"."gblt_hospital_mst_copy1"."gstr_hospital_name" ''',conn)
-
-# drop_options2=checklistmap1[['gstr_hospital_name','gnum_hospital_type']]
-# # a=drop_options2.set_index('gstr_hospital_name').T.to_dict('list')
-# # print(a)
-# # print(type(a))
-# a=dict(drop_options2.values)
-# print(a)
+        return '404'  
 
 #****************************************************HOSPITAL WISE STATISTICS***********************************************************
 
@@ -3131,7 +3098,7 @@ def update_hosp(selected_hosp_type, selected_tab):
 
     # .loc[df_hardware_data['Health Facility']=='DHH']
     if selected_tab=='tab1-hardware':
-        df_hardware_data=pd.read_csv('C:/Users/HP/Desktop/CDAC/eswasthya_dashboard/hardware1.csv')
+        df_hardware_data=pd.read_csv('../../hardware1.csv')
         df_hardware_data=df_hardware_data.dropna()
         df_hardware_filtered=df_hardware_data.loc[df_hardware_data['Hosp Type']==selected_hosp_type]
         # result=df_hardware_filtered['Required'].multiply(df_hardware_filtered['No of Institution'])
@@ -3275,7 +3242,7 @@ def update_hosp(selected_hosp_type, selected_tab):
                 ])
 
     elif selected_tab=='tab4-manpower':
-        df_manpower_data=pd.read_csv('C:/Users/HP/Desktop/CDAC/eswasthya_dashboard/manpower.csv')
+        df_manpower_data=pd.read_csv('../../manpower.csv')
         df_manpower_data=df_manpower_data.dropna()
         df_manpower_filtered=df_manpower_data.loc[df_manpower_data['Hosp Type']==selected_hosp_type]
 
@@ -3313,7 +3280,7 @@ def update_hosp(selected_hosp_type, selected_tab):
         ,className='col-sm-6 pt-5 d-flex justify-content-end',style={"display": "inline-block"})], className='d-flex')
 
     elif selected_tab=='tab2-networking':
-        df_networking_data=pd.read_csv('C:/Users/HP/Desktop/CDAC/eswasthya_dashboard/lan.csv')
+        df_networking_data=pd.read_csv('../../lan.csv')
         df_networking_data=df_networking_data.dropna()
         df_networking_filtered=df_networking_data.loc[df_networking_data['Hosp Type']==selected_hosp_type]
         df_networking_filtered=df_networking_filtered.drop(['Health Facility','Hosp Type', 'Commissioned', 'Tendered'],axis=1)
