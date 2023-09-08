@@ -1,0 +1,13 @@
+Health Facility,No of Institution,Hosp Type,Hardwares,Required,Tendered,Procured,Delivered,Commissioned
+DHH,1,1,Desktops,42,yes,30,20,After Networking 
+DHH,1,1,UPS,48,yes,48,48,After Networking 
+DHH,1,1,Printer,56,yes,56,56,After Networking 
+CHC,13,3,Desktops,208,yes,208,208,After Networking 
+CHC,13,3,UPS,234,yes,232,232,After Networking 
+CHC,13,3,Printer,234,yes,182,182,After Networking 
+UPHC,24,5,Desktops,5,yes,120,120,After Networking 
+UPHC,24,5,UPS,7,yes,167,167,After Networking 
+UPHC,24,5,Printer,8,yes,120,120,After Networking 
+PHC,43,4,Desktops,5,yes,215,215,After Networking 
+PHC,43,4,UPS,7,yes,296,296,After Networking 
+PHC,43,4,Printer,8,yes,213,213,After Networking 
