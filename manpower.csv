@@ -1,0 +1,17 @@
+Health Facility,Hosp Type,Type,Amount
+DH,1,Required ,12
+DH,1,Deputed,0
+DH,1,Trained,0
+DH,1,Existing,8
+CHC,3,Required ,0
+CHC,3,Deputed,0
+CHC,3,Trained,0
+CHC,3,Existing,0
+UPHC,5,Required ,0
+UPHC,5,Deputed,0
+UPHC,5,Trained,0
+UPHC,5,Existing,0
+PHC,4,Required ,0
+PHC,4,Deputed,0
+PHC,4,Trained,0
+PHC,4,Existing,0
